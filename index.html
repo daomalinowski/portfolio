@@ -1,448 +1,406 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dao S. Malinowski - Web Developer Portfolio</title>
-    <style>
-     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Playfair+Display:wght@500&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dao S. Malinowski — Web Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    body {
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.7;
+      color: #2e3d2e;
+      background-color: #f7f9f5;
+      scroll-behavior: smooth;
+    }
 
-body {
-    font-family: 'Quicksand', sans-serif;
-    line-height: 1.7;
-    color: #3b3b3b;
-    background-color: #f7f9f5;
-}
+    /* Header */
+    header {
+      background: linear-gradient(120deg, #b8e0c2 0%, #e8f2dc 100%);
+      padding: 100px 20px;
+      text-align: center;
+      color: #1d2d1d;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* HEADER */
-header {
-    background: linear-gradient(120deg, #b2d8b2 0%, #dcead1 100%);
-    color: #2e3d2e;
-    padding: 80px 0;
-    text-align: center;
-}
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.5), transparent 70%);
+    }
 
-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: #1d2d1d;
-}
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      letter-spacing: 1px;
+      animation: fadeInDown 1s ease;
+    }
 
-header p {
-    font-size: 1.2rem;
-    opacity: 0.8;
-}
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      margin-top: 10px;
+      animation: fadeInUp 1s ease;
+    }
 
-/* NAVIGATION */
-nav {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+    /* Navigation */
+    nav {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 15px 0;
-    gap: 40px;
-}
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 40px;
+      padding: 18px 0;
+    }
 
-nav a {
-    color: #2e3d2e;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
+    nav a {
+      text-decoration: none;
+      color: #2e3d2e;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-nav a:hover {
-    color: #5b8a72;
-}
+    nav a:hover {
+      color: #5b8a72;
+    }
 
-/* SECTIONS */
-section {
-    padding: 80px 0;
-}
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #304030;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 40px;
-}
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #304030;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 50px;
+    }
 
-/* PROJECTS */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 40px;
-}
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 40px;
+    }
 
-.project-card {
-    background: #ffffff;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+    .project-card {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
 
-.project-image img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-}
+    .project-image img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
 
-.project-content {
-    padding: 25px;
-}
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
 
-.project-content h3 {
-    color: #1d2d1d;
-    margin-bottom: 10px;
-}
+    .project-content {
+      padding: 25px;
+    }
 
-.project-content p {
-    color: #4b604b;
-    margin-bottom: 20px;
-}
+    .project-content h3 {
+      color: #1d2d1d;
+      margin-bottom: 10px;
+    }
 
-/* TECH STACK */
-.tech-tag {
-    background: #e7f1e7;
-    color: #5b8a72;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-}
+    .project-content p {
+      color: #4b604b;
+      margin-bottom: 20px;
+    }
 
-/* BUTTONS */
-.btn {
-    border-radius: 25px;
-    text-decoration: none;
-    padding: 10px 25px;
-    font-weight: 500;
-    transition: all 0.3s;
-}
+    .tech-tag {
+      background: #e7f1e7;
+      color: #5b8a72;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-right: 8px;
+    }
 
-.btn-primary {
-    background: #8fcf9b;
-    color: #fff;
-}
+    .btn {
+      border-radius: 25px;
+      text-decoration: none;
+      padding: 10px 25px;
+      font-weight: 500;
+      transition: all 0.3s;
+      display: inline-block;
+    }
 
-.btn-primary:hover {
-    background: #7ebf8a;
-    transform: scale(1.05);
-}
+    .btn-primary {
+      background: #8fcf9b;
+      color: #fff;
+    }
 
-.btn-secondary {
-    border: 2px solid #8fcf9b;
-    color: #5b8a72;
-}
+    .btn-primary:hover {
+      background: #7ebf8a;
+      transform: scale(1.05);
+    }
 
-.btn-secondary:hover {
-    background: #8fcf9b;
-    color: white;
-}
+    .btn-secondary {
+      border: 2px solid #8fcf9b;
+      color: #5b8a72;
+    }
 
-/* SKILLS */
-.skill-item {
-    background: #fff;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-}
+    .btn-secondary:hover {
+      background: #8fcf9b;
+      color: white;
+    }
 
-.skill-item:hover {
-    transform: translateY(-5px);
-}
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
 
-/* CONTACT */
-.contact-info {
-    background: #ffffff;
-    border-radius: 15px;
-    padding: 50px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    text-align: center;
-}
+    .skill-item {
+      background: #fff;
+      border-radius: 15px;
+      padding: 35px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
 
-.contact-info a {
-    color: #5b8a72;
-    text-decoration: none;
-    font-weight: 500;
-    margin: 0 10px;
-}
+    .skill-item:hover {
+      transform: translateY(-5px);
+    }
 
-.contact-info a:hover {
-    color: #7ebf8a;
-}
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
 
-/* FOOTER */
-footer {
-    background: #2e3d2e;
-    color: #eaeaea;
-    text-align: center;
-    padding: 25px 0;
-}
+    /* Contact */
+    .contact-info {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 50px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
 
+    .contact-info a {
+      color: #5b8a72;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 12px;
+    }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .contact-info a:hover {
+      color: #7ebf8a;
+    }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    footer {
+      background: #2e3d2e;
+      color: #eaeaea;
+      text-align: center;
+      padding: 25px 0;
+      margin-top: 80px;
+    }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.3rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Dao S. Malinowski</h1>
-            <p>Web Developer | WordPress Specialist | Front-End and Full-Stack Developer</p>
+  <!-- Header -->
+  <header>
+    <h1>Dao S. Malinowski</h1>
+    <p>Web Developer · WordPress Specialist · Front-End & Full-Stack Developer</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="Psychotherapy Website" />
         </div>
-    </header>
+        <div class="project-content">
+          <h3>Embodied Psychotherapy Practice Website</h3>
+          <p>Custom WordPress theme for a psychotherapy and mindfulness practice — minimalist design, soft tones, and responsive layout.</p>
+          <div>
+            <span class="tech-tag">WordPress</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">CSS3</span>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="#" class="btn btn-secondary">View Code</a>
+          </div>
+        </div>
+      </div>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1556912173-3b4b5b8a00e4?auto=format&fit=crop&w=1000&q=80" alt="Green Fork Project" />
+        </div>
+        <div class="project-content">
+          <h3>Green Fork — Vegetarian Recipe Sharing Platform</h3>
+          <p>Symfony + React-based web app for sharing vegetarian and vegan recipes. Includes live search, tag filters, and recipe management.</p>
+          <div>
+            <span class="tech-tag">Symfony</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">MySQL</span>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="#" class="btn btn-secondary">View Code</a>
+          </div>
+        </div>
+      </div>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            
-            <div class="projects-grid">
-                <!-- Project 1: Psychotherapy Website -->
-                <div class="project-card">
-  <div class="project-image">
-    <img src="images/screenshot1.jpg" alt="Psychotherapy Website">
-  </div>
-  <div class="project-content">
-    <h3>Embodied Psychotherapy Practice Website</h3>
-    <p>Custom WordPress theme for mental health professional...</p>
-    <div class="tech-stack">
-      <span class="tech-tag">WordPress</span>
-      <span class="tech-tag">PHP</span>
-      <span class="tech-tag">CSS3</span>
+      <!-- Project 3 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" alt="Travel Agency Website" />
+        </div>
+        <div class="project-content">
+          <h3>Globtrotter — Travel Agency Platform</h3>
+          <p>Responsive online travel agency built in native PHP with booking forms, gallery, and modern UX design.</p>
+          <div>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JS</span>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="#" class="btn btn-secondary">View Code</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="project-links">
-      <a href="#" class="btn btn-secondary">View Code</a>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills & Technologies</h2>
+    <div class="skills-grid">
+      <div class="skill-item"><div class="skill-icon">🎨</div><h4>Frontend</h4><p>HTML, CSS, JavaScript, React</p></div>
+      <div class="skill-item"><div class="skill-icon">⚙️</div><h4>Backend</h4><p>PHP, Symfony, Node.js</p></div>
+      <div class="skill-item"><div class="skill-icon">📱</div><h4>WordPress</h4><p>Custom Themes & Plugins</p></div>
+      <div class="skill-item"><div class="skill-icon">🎯</div><h4>Tools</h4><p>Git, VS Code, FTP, cPanel</p></div>
+      <div class="skill-item"><div class="skill-icon">🎭</div><h4>Design</h4><p>Figma, Responsive, UX/UI</p></div>
+      <div class="skill-item"><div class="skill-icon">🌱</div><h4>Mindful Web</h4><p>Sustainable design & accessibility</p></div>
     </div>
-  </div>
-</div>
+  </section>
 
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <div class="contact-info">
+      <p style="margin-bottom: 25px; font-size: 1.15rem;">Interested in working together? Let's connect!</p>
+      <div>
+        <a href="mailto:szymonsant@gmail.com">📧 Email</a>
+        <a href="https://github.com/daomalinowski" target="_blank">💻 GitHub</a>
+        <a href="https://www.linkedin.com/in/szymon-dao-malinowski/" target="_blank">💼 LinkedIn</a>
+      </div>
+    </div>
+  </section>
 
-                <!-- Project 2: Placeholder (dodaj więcej projektów) -->
-                <div class="project-card">
-                    <div class="project-image">
-                          <img src="images/1.png" alt="Veg Recipie Website">
-                        💼 Green Fork
-                    </div>
-                    <div class="project-content">
-                        <h3> Green Fork - platform for sharing for sharing vegetarian recipies </h3>
-                        <p> Website made in PHP framework - Symfony and also Java Script React framework</p>
-                        
-                        <div class="tech-stack">
-                            <span class="tech-tag">Symfony</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">React</span>
-                        </div>
-                             <!-- Video Demo (opcjonalne) -->
-                        <div class="video-container">
-                            <!-- Zamień na link do Twojego video na YouTube/Vimeo -->
-                               <iframe width="560" height="315" src="https://www.youtube.com/embed/nkRQHHNOFQM?si=fBLB3DWT4_YDUdOi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            <div style="background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center; color: #999;">
-                            </div>
-                        </div>
-                        
-                        <div class="project-links">
-                             <!--<a href="#" class="btn btn-primary">Live Demo</a> -->
-                            <a href="#" class="btn btn-secondary">View Code</a>
-                        </div>
-                    </div>
-                </div>
+  <footer>
+    <p>&copy; 2025 Dao S. Malinowski — All rights reserved.</p>
+  </footer>
 
-                <!-- Project 3: Placeholder -->
-                <div class="project-card">
-                    <div class="project-image">
-                        💼 Travel agency online website
-                    </div>
-                    <div class="project-content">
-                        <h3>Globtrotteur - </h3>
-                        <p>Travel agency online website made on PHP native without any frameworks.</p>
-                        
-                        <div class="tech-stack">
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JS</span>
-                        </div>
-                        
-                        <div class="project-links">
-                            <!--   <a href="#" class="btn btn-primary">Live Demo</a>-->
-                            <a href="#" class="btn btn-secondary">View Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
 
-    <!-- Skills Section -->
-    <section id="skills" style="background: white;">
-        <div class="container">
-            <h2>Skills & Technologies</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-icon">🎨</div>
-                    <h4>Frontend</h4>
-                    <p>HTML, CSS, JavaScript, React</p>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">⚙️</div>
-                    <h4>Backend</h4>
-                    <p>PHP, Node.js, MySQL</p>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">📱</div>
-                    <h4>WordPress</h4>
-                    <p>Custom Themes, Plugins</p>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">🎯</div>
-                    <h4>Tools</h4>
-                    <p>Git, VS Code, FTP</p>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">🎭</div>
-                    <h4>Design</h4>
-                    <p>Figma, Responsive, Bootstrap</p>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">🚀</div>
-                    <h4>Deployment</h4>
-                    <p>OVH, cPanel, SSH, Amazon</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            
-            <div class="contact-info">
-                <p style="margin-bottom: 30px; font-size: 1.2rem;">
-                    Interested in working together? Let's connect!
-                </p>
-                <div>
-                    <a href="mailto:szymonsant@gmail.com">📧 Email</a>
-                    <a href="https://github.com/daomalinowski" target="_blank">💻 GitHub</a>
-                    <a href="https://www.linkedin.com/in/szymon-dao-malinowski/" target="_blank">💼 LinkedIn</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Szymon Dao Malinowski. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animate on scroll (simple version)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.6s';
-                }
-            });
-        });
-
-        document.querySelectorAll('.project-card, .skill-item').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+    document.querySelectorAll('.project-card, .skill-item').forEach(el => observer.observe(el));
+  </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
